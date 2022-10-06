@@ -6,15 +6,17 @@ OBJS		= $(SRCS:%.c=%.o)
 
 CC		= gcc# -Wall -Wextra -Werror -g -fsanitize=address
 
+THREAD_F	= -pthread
+
 RM		= rm -f
 
 .c.o:
-			$(CC) -c $< -o $@
+			$(CC) $(THREAD_F) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(OBJS) -o $(NAME)
+			$(CC) $(THREAD_F) $(OBJS) -o $(NAME)
 			@echo "$(GREEN)Successfully built --> $(YELLOW)$(NAME)$(DEFAULT)"
 
 clean:
