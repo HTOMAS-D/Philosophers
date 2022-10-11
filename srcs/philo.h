@@ -11,6 +11,22 @@ typedef struct s_data
 	int	time_to_eat;
 	int	time_to_sleep;
 	int	must_eat;
+	t_philo *philo;
 }	t_data;
+
+typedef struct s_philo
+{
+	int				id;
+	struct s_philo 	*next;
+}	t_philo;
+
+//CHECK.C
+int check_args(int ac, char **av);
+
+//UTILS.C
+int ft_atoi(char *str);
+
+//PHILOS.C
+void create_philos(t_data *data);
 
 #endif

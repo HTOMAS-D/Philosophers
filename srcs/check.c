@@ -1,16 +1,22 @@
 #include "philo.h"
 
-void check_args(int ac, char **av)
+int check_args(int ac, char **av)
 {
 	int i;
-	int j;
 
-	i = 1;
-	while (i < ac)
+	if (ac < 5 || ac > 6)
 	{
-		j = 0;
-		while (av[i][j])
+		printf("Error: wrong number of arguments\n");
+		return (1);
+	}
+	i = 1;
+	while(i++ < ac)
+	{
+		if (ft_atoi(av[i]) < 1)
 		{
-			if (av[i][j] < '0' || av[i][j] > '9')
-			{
-				printf("Error: arguments must be numbers
+			printf("Error: Invalid argument\n");
+			return (1);
+		}
+	}
+	return (0);
+}
