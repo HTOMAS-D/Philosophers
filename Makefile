@@ -17,7 +17,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			$(CC) $(THREAD_F) $(OBJS) -o $(NAME)
-			@echo "$(GREEN)Successfully built --> $(YELLOW)$(NAME)$(DEFAULT)"
+			@echo "$(GREEN)Successfully built --> 🥳 🤔 $(YELLOW)$(NAME)$(DEFAULT) 🤔 🥳"
 
 clean:
 			$(RM) $(OBJS)
