@@ -44,7 +44,7 @@ typedef struct s_philo
 int check_args(int ac, char **av);
 
 //UTILS.C
-int ft_atoi(char *str);
+long long ft_atoi(char *str);
 long long get_time(long long time0);
 
 //PHILOS.C

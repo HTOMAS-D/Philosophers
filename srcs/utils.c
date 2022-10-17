@@ -8,10 +8,10 @@ long long get_time(long long time0)
 	return ((time.tv_sec * 1000 + time.tv_usec / 1000) - time0);
 }
 
-int ft_atoi(char *str)
+long long ft_atoi(char *str)
 {
 	int i;
-	int res;
+	long long res;
 	int flag;
 
 	i = 0;
