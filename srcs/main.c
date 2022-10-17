@@ -17,7 +17,10 @@ int	init_data(t_data *data, int ac, char **av)
 			return (0);
 		}
 	if(create_philos(data))
+	{	
+		printf("Error creating philosophers\n");
 		return (1);
+	}
 	return (0);
 }
 
@@ -27,8 +30,8 @@ int main(int ac, char **av)
 	
 	if(check_args(ac, av))
 		return (1);
-	printf("ola 2\n");
 	if(init_data(&data, ac, av))
 		return (2);
-	
+	printf("number of philos: %d\n", data.philo_num);
+	return (0);
 }
