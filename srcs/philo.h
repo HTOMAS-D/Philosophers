@@ -59,4 +59,7 @@ int create_mutexes(t_data *data);
 //THREADS.C
 int create_threads(t_data *data);
 
+//ROUTINE.C
+void *philo_life(void *p);
+
 #endif
