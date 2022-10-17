@@ -32,6 +32,5 @@ int main(int ac, char **av)
 		return (1);
 	if(init_data(&data, ac, av))
 		return (2);
-	printf("number of philos: %d\n", data.philo_num);
 	return (0);
 }

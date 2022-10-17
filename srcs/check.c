@@ -17,8 +17,6 @@ int check_args(int ac, char **av)
 			printf("Error: Invalid argument\n");
 			return (2);
 		}
-		//printf("ola 1\n");
 	}
-	printf("ola 1\n");
 	return (0);
 }

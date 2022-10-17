@@ -53,4 +53,10 @@ t_philo	*add_philo(int id, t_data *data);
 int	one_philo(t_data *data);
 void	*only_one(void *p);
 
+//MUTEX.C
+int create_mutexes(t_data *data);
+
+//THREADS.C
+int create_threads(t_data *data);
+
 #endif

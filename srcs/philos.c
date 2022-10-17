@@ -7,9 +7,9 @@ void	*only_one(void *p)
 
 	philo = (t_philo *)p;
 	data = philo->data;
-	printf("%s%lli mx ->%s Philosopher %d %s\n", BLUE,  get_time(data->time0), 
+	printf("%s%lli ms ->%s Philosopher %d %s\n", BLUE,  get_time(data->time0), 
 		YELLOW, 1, L_FORK);
-	printf("%s%lli mx ->%s Philosopher %d %s\n", BLUE,  get_time(data->time0), 
+	printf("%s%lli ms ->%s Philosopher %d %s\n", BLUE,  get_time(data->time0), 
 		RED, 1, DIED);
 	return (NULL);
 }
@@ -20,21 +20,23 @@ int	one_philo(t_data *data)
 	if (!data->philo)
 		return (1);
 	data->time0 = get_time(0);
-	if(pthread_create(&data->philo->thread, NULL, &only_one, data->philo))
+	if (pthread_create(&(data->philo->thread), NULL, only_one, data->philo))
 			return (1);
+	pthread_join(data->philo->thread, NULL);
 	return (0);
 }
 
 t_philo	*add_philo(int id, t_data *data)
 {
 	t_philo	*philo;
-
+	
 	philo = malloc(sizeof(t_philo));
 	if (!philo)
 		return (NULL);
 	philo->id = id;
 	philo->next = NULL;
 	philo->data = data;
+	
 	return (philo);
 }
 
@@ -58,5 +60,7 @@ int	create_philos(t_data *data)
 	}
 	philo->next = first;
 	data->philo = first;
+	if(create_mutexes(data) || create_threads(data))
+		return (1);
 	return (0);
 }
