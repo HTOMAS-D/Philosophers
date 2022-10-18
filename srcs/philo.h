@@ -5,6 +5,7 @@
 #include <sys/time.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 //ACTIONS
 #define R_FORK "has taken the right fork"
@@ -52,6 +53,7 @@ int check_args(int ac, char **av);
 //UTILS.C
 long long ft_atoi(char *str);
 long long get_time(long long time0);
+void ft_usleep(long long time);
 
 //PHILOS.C
 int create_philos(t_data *data);
@@ -65,6 +67,7 @@ int create_forks(t_data *data);
 
 //THREADS.C
 int create_threads(t_data *data);
+int join_threads(t_data *data);
 
 //ROUTINE.C
 void *philo_life(void *p);

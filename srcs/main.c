@@ -32,5 +32,12 @@ int main(int ac, char **av)
 		return (1);
 	if(init_data(&data, ac, av))
 		return (2);
+	if(join_threads(&data))
+		{
+			printf("Error joining threads\n");
+			return (3);
+		}
+	ft_usleep(10);
+	
 	return (0);
 }

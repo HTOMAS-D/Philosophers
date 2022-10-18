@@ -1,6 +1,6 @@
 #include "philo.h"
 
-void	*philo_life(void *p)
-{
-	
-}
+// void	*philo_life(void *p)
+// {
+
+// }

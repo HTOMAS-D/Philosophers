@@ -1,5 +1,14 @@
 #include "philo.h"
 
+void ft_usleep(long long time)
+{
+	long long t;
+
+	t = get_time(0) + time;
+	while (get_time(0) < t)
+		usleep(10);
+}
+
 long long get_time(long long time0)
 {
 	struct timeval	time;

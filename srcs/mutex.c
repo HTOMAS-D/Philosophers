@@ -12,6 +12,7 @@ int	create_forks(t_data *data)
 		data->philo = data->philo->next;
 		i++;
 	}
+	return (0);
 }
 
 int	create_mutexes(t_data *data)
@@ -25,4 +26,5 @@ int	create_mutexes(t_data *data)
 		return (3);
 	if (pthread_mutex_init(&(data->last_meal), NULL) || pthread_mutex_init(&(data->all_ate), NULL))
 		return (4);
+	return (0);
 }
