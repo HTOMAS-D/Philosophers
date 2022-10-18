@@ -29,6 +29,12 @@ typedef struct s_data
 	long long	to_sleep;
 	int	must_eat;
 	long long time0;
+	pthread_t thread;
+	pthread_mutex_t *forks;
+	pthread_mutex_t print;
+	pthread_mutex_t end;
+	pthread_mutex_t last_meal;
+	pthread_mutex_t all_ate;
 	struct s_philo *philo;
 }	t_data;
 
@@ -55,11 +61,15 @@ void	*only_one(void *p);
 
 //MUTEX.C
 int create_mutexes(t_data *data);
+int create_forks(t_data *data);
 
 //THREADS.C
 int create_threads(t_data *data);
 
 //ROUTINE.C
 void *philo_life(void *p);
+
+//END.C
+void *check_end(void *p);
 
 #endif

@@ -22,7 +22,7 @@ int	init_data(t_data *data, int ac, char **av)
 		return (1);
 	}
 	return (0);
-}
+}	
 
 int main(int ac, char **av)
 {
