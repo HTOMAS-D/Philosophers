@@ -8,6 +8,8 @@ int init_atoi(t_data *data, int ac, char **av)
 	data->to_sleep = ft_atoi(av[4]);
 	data->must_eat = 0;
 	data->time0 = 0;
+	data->all_ate = 0;
+	data->end = 0;
 	if (ac == 6)
 		data->must_eat = ft_atoi(av[5]);
 	return (0);
@@ -15,7 +17,7 @@ int init_atoi(t_data *data, int ac, char **av)
 
 int	init_data(t_data *data, int ac, char **av)
 {
-	init(data, ac, av);
+	init_atoi(data, ac, av);
 	if(data->philo_num == 1)
 		{
 			if(one_philo(data))
@@ -45,6 +47,6 @@ int main(int ac, char **av)
 			return (3);
 		}
 	ft_usleep(10);
-
+	end_simulation(&data);
 	return (0);
 }

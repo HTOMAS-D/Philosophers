@@ -46,4 +46,5 @@ int	create_threads(t_data *data)
 			printf("Error creating data thread\n");
 			return (1);
 		}
+	return (0);
 }

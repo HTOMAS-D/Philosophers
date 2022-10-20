@@ -22,9 +22,9 @@ int	create_mutexes(t_data *data)
 			return (1);
 	if (create_forks(data))
 			return (2);
-	if (pthread_mutex_init(&(data->print), NULL) || pthread_mutex_init(&(data->end), NULL))
+	if (pthread_mutex_init(&(data->print), NULL) || pthread_mutex_init(&(data->check_end), NULL))
 		return (3);
-	if (pthread_mutex_init(&(data->last_meal), NULL) || pthread_mutex_init(&(data->all_ate), NULL))
+	if (pthread_mutex_init(&(data->last_meal), NULL) || pthread_mutex_init(&(data->check_all_ate), NULL))
 		return (4);
 	return (0);
 }
