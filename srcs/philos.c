@@ -54,8 +54,8 @@ int	create_philos(t_data *data)
 	while (++id < data->philo_num)
 	{
 		philo->next = add_philo(id, data);
-		if (!philo->next)
-			return (1);
+		// if (!philo->next)
+		// 	return (1);
 		philo = philo->next;
 	}
 	philo->next = first;

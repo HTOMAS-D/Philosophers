@@ -71,6 +71,7 @@ int join_threads(t_data *data);
 
 //ROUTINE.C
 void *philo_life(void *p);
+static void eat(t_data *data, t_philo *philo);
 
 //END.C
 void *check_end(void *p);
