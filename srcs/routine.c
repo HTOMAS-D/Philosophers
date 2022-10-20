@@ -1,8 +1,16 @@
 #include "philo.h"
 
-static void eat(t_data *data, t_philo *philo)
+static void (t_data *data, t_philo *philo, int *l_fork, int *r_fork)
 {
 	
+}
+
+static void eat(t_data *data, t_philo *philo)
+{
+	int l_fork;
+	int r_fork;
+
+	fork_lock(data, philo, &l_fork, &r_fork);
 }
 
 void	*philo_life(void *p)
