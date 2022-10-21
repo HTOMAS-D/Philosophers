@@ -19,30 +19,36 @@ long long get_time(long long time0)
 
 long long ft_atoi(char *str)
 {
-	int i;
-	long long res;
-	int flag;
+	long long	result;
+	int			sign;
+	int			i;
 
+	if (!str)
+		return (0);
+	result = 0;
+	sign = 1;
 	i = 0;
-	res = 0;
-	flag = 1;
-	if (str[i] == '-')
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] && (str[i] == '-' || str[i] == '+'))
 	{
-		flag = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + str[i] - '0';
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (res * flag);
+	return (sign * result);
 }
 
 int ft_strcmp(char *s1, char *s2)
 {
 	int i;
 
+	i = 0;
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
 	return (s1[i] - s2[i]);

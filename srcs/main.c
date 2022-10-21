@@ -42,9 +42,15 @@ int main(int ac, char **av)
 	t_data	data;
 	
 	if(check_args(ac, av))
+	{
+		printf("%sError: wrong arguments\n%s", RED, DEFAULT);
 		return (1);
+	}
 	if(init_data(&data, ac, av))
+	{
+		printf("Error initializing data\n");
 		return (2);
+	}
 	if(join_threads(&data))
 	{
 		printf("Error joining threads\n");
