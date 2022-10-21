@@ -4,7 +4,7 @@ SRCS		= $(wildcard srcs/*.c)
 
 OBJS		= $(SRCS:%.c=%.o)
 
-CC		= gcc# -Wall -Wextra -Werror -g -fsanitize=address
+CC		= gcc #-g -fsanitize=address# -Wall -Wextra -Werror -g -fsanitize=address
 
 THREAD_F	= -pthread
 

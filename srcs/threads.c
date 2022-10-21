@@ -9,16 +9,14 @@ int	join_threads(t_data *data)
 	{
 		if(pthread_join(data->philo->thread, NULL))
 				return (1);
+		return (0);
 	}
-	else
+	while (i != data->philo_num)
 	{
-		while (i != data->philo_num)
-		{
-			if(pthread_join(data->philo->thread, NULL))
-				return (2);
-			data->philo = data->philo->next;
-			i++;
-		}
+		if(pthread_join(data->philo->thread, NULL))
+			return (2);
+		data->philo = data->philo->next;
+		i++;
 	}
 	if (pthread_join(data->thread, NULL))
 		return (3);

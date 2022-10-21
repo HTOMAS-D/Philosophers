@@ -2,14 +2,17 @@
 
 static char	*check_color(char *log)
 {
+	char *color;
+	
 	if (!ft_strcmp(log, DIED))
-		return (RED);
+		color = RED;
 	else if (!ft_strcmp(log, EATING))
-		return (GREEN);
+		color = GREEN;
 	else if (!ft_strcmp(log, SLEEPING))
-		return (BLUE);
+		color = BLUE;
 	else
-		return (YELLOW);
+		color = YELLOW;
+	return (color);
 }
 
 void	logs(int philo, char *log, t_data *data)

@@ -22,7 +22,6 @@ int	one_philo(t_data *data)
 	data->time0 = get_time(0);
 	if (pthread_create(&(data->philo->thread), NULL, only_one, data->philo))
 			return (1);
-	pthread_join(data->philo->thread, NULL);
 	return (0);
 }
 
@@ -36,7 +35,9 @@ t_philo	*add_philo(int id, t_data *data)
 	philo->id = id;
 	philo->next = NULL;
 	philo->data = data;
-	
+	philo->last_meal = 0;
+	philo->ate = 0;
+	philo->ate_all = 0;
 	return (philo);
 }
 
@@ -46,16 +47,12 @@ int	create_philos(t_data *data)
 	t_philo *philo;
 	t_philo *first;
 
-	id = 1;
-	philo = add_philo(id, data);
-	if (!philo)
-		return (1);
+	philo = add_philo(1, data);
 	first = philo;
+	id = 1;
 	while (++id < data->philo_num)
 	{
 		philo->next = add_philo(id, data);
-		// if (!philo->next)
-		// 	return (1);
 		philo = philo->next;
 	}
 	philo->next = first;
