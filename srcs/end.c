@@ -19,10 +19,10 @@ void	end_simulation(t_data *data)
 		data->philo = philo;
 	}
 	free(data->forks);
-	pthread_mutex_destroy(&(data->print));
-	pthread_mutex_destroy(&(data->last_meal));
-	pthread_mutex_destroy(&(data->check_all_ate));
-	pthread_mutex_destroy(&(data->check_end));
+	pthread_mutex_destroy(&data->print);
+	pthread_mutex_destroy(&data->last_meal);
+	pthread_mutex_destroy(&data->check_all_ate);
+	pthread_mutex_destroy(&data->check_end);
 }
 
 static int	check_death(t_data *data, t_philo *philo)
