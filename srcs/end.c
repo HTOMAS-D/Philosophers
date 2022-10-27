@@ -14,7 +14,7 @@ void	end_simulation(t_data *data)
 	while (++i <= data->philo_num)
 	{
 		philo = data->philo->next;
-		pthread_mutex_destroy(&(data->forks[i - 1]));
+		pthread_mutex_destroy(&data->forks[i - 1]);
 		free(data->philo);
 		data->philo = philo;
 	}
@@ -62,7 +62,7 @@ void	*check_end(void *p)
 	
 	data = (t_data *)p;
 	philo = data->philo;
-	while (!(check_all_ate(data) || check_death(data, philo)))
+	while (!(check_all_ate(data) || !check_death(data, philo)))
 		philo = philo->next;
 	return (NULL);
 }

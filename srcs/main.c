@@ -56,7 +56,7 @@ int main(int ac, char **av)
 		printf("Error joining threads\n");
 		return (3);
 	}
-	ft_usleep(10);
+//	ft_usleep(50);
 	end_simulation(&data);
 	return (0);
 }

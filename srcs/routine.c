@@ -58,7 +58,7 @@ void	*philo_life(void *p)
 	philo = (t_philo *)p;
 	data = philo->data;
 	if (philo->id % 2 != 0)
-		ft_usleep(10);
+		ft_usleep(50);
 	while (check_end1(data))
 	{
 		eat(data, philo);
